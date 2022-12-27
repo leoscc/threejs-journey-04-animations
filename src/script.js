@@ -34,8 +34,14 @@ renderer.setSize(sizes.width, sizes.height);
 // Animations
 gsap.to(cubeMesh.position, {
   duration: 1,
-  delay: 2,
+  delay: 1,
   x: 2,
+});
+
+gsap.to(cubeMesh.position, {
+  duration: 1,
+  delay: 2,
+  x: 0,
 });
 
 const tick = () => {
