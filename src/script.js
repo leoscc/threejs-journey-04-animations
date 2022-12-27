@@ -37,8 +37,9 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
   // Update object - wave effect
-  cubeMesh.position.x = Math.sin(elapsedTime);
-  cubeMesh.position.y = Math.cos(elapsedTime);
+  camera.position.x = Math.sin(elapsedTime);
+  camera.position.y = Math.cos(elapsedTime);
+  camera.lookAt(cubeMesh.position);
 
   renderer.render(scene, camera);
 
