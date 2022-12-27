@@ -1,4 +1,5 @@
 import "./style.css";
+import gsap from "gsap";
 import * as THREE from "three";
 
 const canvas = document.querySelector(".webgl");
@@ -31,16 +32,13 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height);
 
 // Animations
-const clock = new THREE.Clock();
+gsap.to(cubeMesh.position, {
+  duration: 1,
+  delay: 2,
+  x: 2,
+});
 
 const tick = () => {
-  const elapsedTime = clock.getElapsedTime();
-
-  // Update object - wave effect
-  camera.position.x = Math.sin(elapsedTime);
-  camera.position.y = Math.cos(elapsedTime);
-  camera.lookAt(cubeMesh.position);
-
   renderer.render(scene, camera);
 
   window.requestAnimationFrame(tick);
