@@ -32,8 +32,7 @@ renderer.setSize(sizes.width, sizes.height);
 
 // Renderer
 const tick = () => {
-  cubeMesh.position.x += 0.01;
-  cubeMesh.position.y -= 0.01;
+  cubeMesh.rotation.y += 0.01;
 
   renderer.render(scene, camera);
 
