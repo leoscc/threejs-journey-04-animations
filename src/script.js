@@ -30,15 +30,13 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 
-let time = Date.now();
-
 // Animations
-const tick = () => {
-  const currentTime = Date.now();
-  const deltaTime = currentTime - time;
-  time = currentTime;
+const clock = new THREE.Clock();
 
-  cubeMesh.rotation.y += 0.001 * deltaTime;
+const tick = () => {
+  const elapsedTime = clock.getElapsedTime();
+
+  cubeMesh.rotation.y = elapsedTime;
 
   renderer.render(scene, camera);
 
