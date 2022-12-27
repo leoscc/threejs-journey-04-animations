@@ -36,7 +36,9 @@ const clock = new THREE.Clock();
 const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
-  cubeMesh.rotation.y = elapsedTime;
+  // Update object - wave effect
+  cubeMesh.position.x = Math.sin(elapsedTime);
+  cubeMesh.position.y = Math.cos(elapsedTime);
 
   renderer.render(scene, camera);
 
